@@ -1,0 +1,24 @@
+{
+    "blue": {
+        "default": "#56a7e8",
+        "dark": "#4987ba",
+        "color": "white",
+        "glow": "rgb(86, 167, 232, 0.3)",
+        "intenseGlow": "rgb(86, 167, 232, 0.6)"
+
+    },
+    "default": {
+        "default": "#ebebeb",
+        "dark": "#cfcfcf",
+        "color": "black",
+        "glow": "rgb(232, 232, 232, 0.3)",
+        "intenseGlow": "rgb(232, 232, 232, 0.6)"
+    },
+    "red": {
+        "default": "#ff5460",
+        "dark": "#d93f49",
+        "color": "white",
+        "glow": "rgb(255, 108, 108, .3)",
+        "intenseGlow": "rgb(255, 108, 108, .6)"
+    }
+}

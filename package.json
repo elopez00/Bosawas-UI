@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "Eddie Lopez",
   "license": "ISC",
@@ -14,9 +16,14 @@
     "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^6.0.2",
+    "@storybook/addon-essentials": "^6.0.2",
+    "@storybook/addon-links": "^6.0.2",
+    "@storybook/react": "^6.0.2",
     "babel-loader": "^8.0.2",
     "babel-plugin-styled-components": "^1.11.1",
     "css-loader": "^1.0.0",
+    "react-is": "^16.13.1",
     "style-loader": "^0.23.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
