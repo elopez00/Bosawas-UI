@@ -1,0 +1,34 @@
+{
+  "name": "bosawas",
+  "version": "1.0.0",
+  "description": "PartnrUp design system",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "webpack-dev-server --mode development"
+  },
+  "author": "Eddie Lopez",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "babel-plugin-styled-components": "^1.11.1",
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.3.11",
+    "styled-components": "^5.1.1"
+  },
+  "resolutions": {
+    "styled-components": "^5.1.1"
+  }
+}
