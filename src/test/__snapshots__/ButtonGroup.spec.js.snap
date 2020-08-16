@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ButtonGroup/> renders correctly 1`] = `
+<div
+  className="ButtonGroup__CButtonGroup-sc-1umt78w-0 dJFUrk"
+  color="default"
+  size="default"
+>
+  <button
+    className="ButtonGroup__DefaultButton-sc-1umt78w-1 kiKRSn"
+    color="default"
+    size="default"
+  >
+    This
+  </button>
+  <button
+    className="ButtonGroup__DefaultButton-sc-1umt78w-1 btSGVX"
+    color="default"
+    size="default"
+  >
+    is
+  </button>
+  <button
+    className="ButtonGroup__DefaultButton-sc-1umt78w-1 hqmLsT"
+    color="default"
+    size="default"
+  >
+    cool
+  </button>
+</div>
+`;

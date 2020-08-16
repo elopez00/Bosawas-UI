@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { hot } from 'react-hot-loader'
-import Button from './components/inputs/Button'
+import Button from './components/Button'
 import styled from 'styled-components'
 import './assets/Bosawas.css'
 

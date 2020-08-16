@@ -1,18 +1,24 @@
 import React from 'react';
 
-import Button from '../components/inputs/Button';
+import Button from '../components/Button';
 import '../assets/Bosawas.css'
 
-
+ 
 export default {
-  title: 'Input/Button',
+  title: 'Inputs/Button',
   component: Button,
   argTypes: {
-    
+    style: { margin: 5 }
   },
 };
 
-const Template = args => <Button {...args} />;
+const Template = args => (
+  <React.Fragment>
+    <Button {...args} style={{margin: 5}}/>
+    <Button {...args} style={{margin: 5}} color="blue"/>
+    <Button {...args} style={{margin: 5}} color="red"/>
+  </React.Fragment>
+);
 
 export const Standard = Template.bind({});
 Standard.args = {
@@ -27,3 +33,9 @@ Bubble.args = {
   children: 'Button',
 };
 
+export const Outline = Template.bind({});
+Outline.args = {
+  disabled: false,
+  variant: 'outline',
+  children: 'Button'
+}

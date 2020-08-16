@@ -8,7 +8,7 @@
 
     },
     "default": {
-        "default": "#ebebeb",
+        "default": "#f0f0f0",
         "dark": "#cfcfcf",
         "color": "black",
         "glow": "rgb(232, 232, 232, 0.3)",
