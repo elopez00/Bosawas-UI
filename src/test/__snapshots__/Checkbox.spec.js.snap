@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkbox/> renders correcty 1`] = `
+<label
+  className="Checkbox__Label-raqpbq-0 krawAu"
+>
+  <input
+    className="Checkbox__CCheckbox-raqpbq-1 gkWMsu"
+    label="this is a checkbox"
+    size="default"
+    type="checkbox"
+  />
+  this is a checkbox
+  <i
+    className="material-icons"
+  >
+    check
+  </i>
+</label>
+`;

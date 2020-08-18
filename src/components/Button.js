@@ -97,12 +97,12 @@ const DefaultButton = styled.button`
     border-radius: 5px;
     outline: none;
     cursor: pointer;
-    transition: background 300ms, box-shadow 300ms;
+    transition: background 300ms, box-shadow 150ms;
     box-shadow: 0 0 0 0 transparent;
     &:hover {
         background: ${props => colors[props.color] ? colors[props.color].dark : colors.default.dark};
     }
-    &:focus {
+    &:active {
         box-shadow: 0 0 0 3px ${props => colors[props.color] ? colors[props.color].glow : colors.default.glow};
     }
     &:disabled {
@@ -126,9 +126,9 @@ const OutlineButton = styled.button`
         background: ${props => colors[props.color] ? colors[props.color].glow : colors.default.glow};
         color: ${props => adjustTextColor(props)};
     }
-    &:focus {
+    &:active {
         border: 1px solid ${props => colors[props.color] ? colors[props.color].default : colors.default.default};
-        background: ${props => colors[props.color] ? colors[props.color].glow : colors.default.glow};
+        background: ${props => colors[props.color] ? colors[props.color].intenseGlow : colors.default.intenseGlow};
         color: ${props => {
             if (colors[props.color]) {
                 return props.color === 'default' ? colors.default.color : colors[props.color].dark;
@@ -162,8 +162,8 @@ const BubbleButton = styled.button`
         background: ${props => colors[props.color] ? colors[props.color].glow : colors.default.glow}; 
         color: ${props => adjustTextColor(props)};
     }
-    &:focus {
-        background: ${props => colors[props.color] ? colors[props.color].glow : colors.default.glow};
+    &:active {
+        background: ${props => colors[props.color] ? colors[props.color].intenseGlow : colors.default.intenseGlow};
         color: ${props => adjustTextColor(props)};
     }
     &:disabled {

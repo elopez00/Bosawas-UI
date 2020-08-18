@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Radio/> renders correctly 1`] = `
+<label
+  className="Radio__Label-pzn6oc-0 eQXWpR"
+>
+  <input
+    className="Radio__CRadio-pzn6oc-1 cnuZUk"
+    defaultChecked={true}
+    label="This is a radio"
+    size="default"
+    type="radio"
+  />
+  <span>
+    This is a radio
+  </span>
+</label>
+`;
