@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Select/> renders correctly 1`] = `
+<div
+  className="Select__CSelect-l9mbgh-0 idfzm"
+  color="default"
+  open={false}
+  size="default"
+  width="default"
+>
+  <button
+    className="Button__DefaultButton-sc-1dsg0nj-0 jIyxzK"
+    color="default"
+    onClick={[Function]}
+    size="default"
+  >
+    Select...
+    <i
+      className="material-icons"
+    >
+      keyboard_arrow_down
+    </i>
+  </button>
+  <div
+    className="Select__Options-l9mbgh-1 irWzlC"
+    id="bosawas-ui-menu-options"
+    open={false}
+  >
+    <span
+      className="Select__COption-l9mbgh-2 huces"
+      onClick={[Function]}
+    >
+      Hello
+    </span>
+    <span
+      className="Select__COption-l9mbgh-2 huces"
+      onClick={[Function]}
+    >
+      Friend
+    </span>
+  </div>
+</div>
+`;

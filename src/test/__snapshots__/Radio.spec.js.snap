@@ -2,10 +2,10 @@
 
 exports[`<Radio/> renders correctly 1`] = `
 <label
-  className="Radio__Label-pzn6oc-0 eQXWpR"
+  className="Radio__Label-pzn6oc-0 iGxKiK"
 >
   <input
-    className="Radio__CRadio-pzn6oc-1 cnuZUk"
+    className="Radio__CRadio-pzn6oc-1 mNQvE"
     defaultChecked={true}
     label="This is a radio"
     size="default"
