@@ -1,5 +1,5 @@
 import React from 'react'
-import { Select } from '../components'
+import { Select, Option } from '../components'
 import { mount, shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
 
@@ -9,8 +9,7 @@ describe ('<Select/>', () => {
         const tree = renderer
             .create (
                 <Select>
-                    <Select.Option>Hello</Select.Option>
-                    <Select.Option>Friend</Select.Option>
+                    <Option>Testing</Option>
                 </Select>
             ).toJSON();
         expect(tree).toMatchSnapshot();
@@ -34,9 +33,9 @@ describe ('<Select/>', () => {
     it ('renders all options', () => {
         const wrapper = mount (
             <Select>
-                <Select.Option>This</Select.Option>
-                <Select.Option>is</Select.Option>
-                <Select.Option>me</Select.Option>
+                <Option>This</Option>
+                <Option>is</Option>
+                <Option>me</Option>
             </Select>
         )
 
@@ -52,9 +51,9 @@ describe ('<Select/>', () => {
     it ('opens and closes menu successfully', () => {
         const wrapper = mount (
             <Select>
-                <Select.Option>This</Select.Option>
-                <Select.Option>is</Select.Option>
-                <Select.Option>me</Select.Option>
+                <Option>This</Option>
+                <Option>is</Option>
+                <Option>me</Option>
             </Select>
         )
 
@@ -72,7 +71,7 @@ describe ('<Select/>', () => {
     it ('should change selection name when option is clicked', () => {
         const wrapper = mount (
             <Select>
-                <Select.Option>Coolio</Select.Option>
+                <Option>Coolio</Option>
             </Select>
         )
 
@@ -84,7 +83,7 @@ describe ('<Select/>', () => {
     it ('should execute renderOptions on componentMount', () => {
         const wrapper = mount(
             <Select>
-                <Select.Option>This is cool</Select.Option>
+                <Option>This is cool</Option>
             </Select>
         )
         const spy = jest.spyOn(wrapper.instance(), 'renderOptions');
@@ -96,7 +95,7 @@ describe ('<Select/>', () => {
     it ('should execute handleClick function when select button is clicked', () => {
         const wrapper = mount (
             <Select>
-                <Select.Option>Coolio</Select.Option>
+                <Option>Coolio</Option>
             </Select>
         )
         const spy = jest.spyOn(wrapper.instance(), 'handleClick');
@@ -109,7 +108,7 @@ describe ('<Select/>', () => {
     it ('should execute handleOptionClick when option is clicked', () => {
         const wrapper = mount (
             <Select>
-                <Select.Option>This is interesting</Select.Option>
+                <Option>This is interesting</Option>
             </Select>
         )
         const spy = jest.spyOn(wrapper.instance(), 'handleOptionClick');
@@ -123,7 +122,7 @@ describe ('<Select/>', () => {
         const mockClick = jest.fn();
         const wrapper = mount (
             <Select buttonClick={mockClick}>
-                <Select.Option>Test something</Select.Option>
+                <Option>Test something</Option>
             </Select>
         )
 
@@ -135,7 +134,7 @@ describe ('<Select/>', () => {
         const mockClick = jest.fn();
         const wrapper = mount (
             <Select>
-                <Select.Option onClick={mockClick}>Testing option click</Select.Option>
+                <Option onClick={mockClick}>Testing option click</Option>
             </Select>
         )
 

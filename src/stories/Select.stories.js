@@ -1,5 +1,5 @@
 import React from 'react'
-import { Select } from '../components'
+import { Select, Option } from '../components'
 
 export default {
     title: "Inputs/Select",
@@ -9,25 +9,25 @@ export default {
 const Template = args => (
     <React.Fragment>
         <Select {...args} style={{margin: 5}}>
-            <Select.Option>Hello</Select.Option>
-            <Select.Option>Hello</Select.Option>
-            <Select.Option>Hello this is a long text to see how it looks</Select.Option>
-            <Select.Option>Hello</Select.Option>
-            <Select.Option>Hello</Select.Option>
+            <Option>Hello</Option>
+            <Option>Hello</Option>
+            <Option>Hello this is a long text to see how it looks</Option>
+            <Option>Hello</Option>
+            <Option>Hello</Option>
         </Select>
         <Select color="red" {...args} style={{margin: 5}}>
-            <Select.Option>Hello</Select.Option>
-            <Select.Option>Hello</Select.Option>
-            <Select.Option>Hello this is a long text to see how it looks</Select.Option>
-            <Select.Option>Hello</Select.Option>
-            <Select.Option>Hello</Select.Option>
+            <Option>Hello</Option>
+            <Option>Hello</Option>
+            <Option>Hello this is a long text to see how it looks</Option>
+            <Option>Hello</Option>
+            <Option>Hello</Option>
         </Select>
         <Select color="blue" {...args} style={{margin: 5}}>
-            <Select.Option>Hello</Select.Option>
-            <Select.Option>Hello</Select.Option>
-            <Select.Option>Hello this is a long text to see how it looks</Select.Option>
-            <Select.Option>Hello</Select.Option>
-            <Select.Option>Hello</Select.Option>
+            <Option>Hello</Option>
+            <Option>Hello</Option>
+            <Option>Hello this is a long text to see how it looks</Option>
+            <Option>Hello</Option>
+            <Option>Hello</Option>
         </Select>
     </React.Fragment>
 )

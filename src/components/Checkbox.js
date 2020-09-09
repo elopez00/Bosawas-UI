@@ -19,9 +19,11 @@ export default function Checkbox(props) {
     )
 }
 
-Checkbox.defaultProps = {
-    background: "default",
-    size: "default"
+Checkbox.propsTypes = {
+    /**
+     * Disabled checkbox
+     */
+    disabled: PropTypes.bool
 }
 
 // styled components
@@ -33,7 +35,7 @@ const Label = styled.label`
     & > i {
         font-size: 1rem;
         position: absolute;
-        top: 2px;
+        top: 1px;
         left: 5px;
         display: none;
         cursor: pointer;

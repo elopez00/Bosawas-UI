@@ -45,7 +45,7 @@ describe ("<Checkbox/>", () => {
 
     it ('does not execute onClick function when disabled=true', () => {
         const mockClick = jest.fn();
-        const wrapper = mount (<Checkbox onClick={mockClick} disabled/>);
+        const wrapper = mount (<Checkbox onClick={mockClick} disabled={true}/>);
         wrapper.find('input').simulate('click');
         expect(mockClick).toHaveBeenCalledTimes(0);
     })

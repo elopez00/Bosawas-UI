@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dropdown/> renders correctly 1`] = `
+<div
+  className="Dropdown__CDropdown-sc-1fz49ah-0 gzgGiO"
+  open={false}
+>
+  <button
+    className="Button__DefaultButton-sc-1dsg0nj-0 jIyxzK"
+    color="default"
+    onClick={[Function]}
+    size="default"
+  >
+    Dropdown
+    <a
+      className="Dropdown__Carat-sc-1fz49ah-1 fhauPa"
+      open={false}
+    >
+      <i
+        class="material-icons"
+      >
+        keyboard_arrow_down
+      </i>
+    </a>
+  </button>
+  <div
+    className="Dropdown__Options-sc-1fz49ah-2 gygfzx"
+    open={false}
+  >
+    <span
+      className="Option__COption-sc-18zrkgp-0 bxzeXk"
+      onClick={[Function]}
+    >
+      Option 1
+    </span>
+    <span
+      className="Option__COption-sc-18zrkgp-0 bxzeXk"
+      onClick={[Function]}
+    >
+      Option 2
+    </span>
+    <span
+      className="Option__COption-sc-18zrkgp-0 bxzeXk"
+      onClick={[Function]}
+    >
+      Option 3
+    </span>
+  </div>
+</div>
+`;

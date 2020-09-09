@@ -2,7 +2,7 @@
 
 exports[`<Select/> renders correctly 1`] = `
 <div
-  className="Select__CSelect-l9mbgh-0 idfzm"
+  className="Select__CSelect-l9mbgh-0 bTjNfP"
   color="default"
   open={false}
   size="default"
@@ -22,21 +22,15 @@ exports[`<Select/> renders correctly 1`] = `
     </i>
   </button>
   <div
-    className="Select__Options-l9mbgh-1 irWzlC"
+    className="Select__Options-l9mbgh-1 khcDho"
     id="bosawas-ui-menu-options"
     open={false}
   >
     <span
-      className="Select__COption-l9mbgh-2 huces"
+      className="Option__COption-sc-18zrkgp-0 bxzeXk"
       onClick={[Function]}
     >
-      Hello
-    </span>
-    <span
-      className="Select__COption-l9mbgh-2 huces"
-      onClick={[Function]}
-    >
-      Friend
+      Testing
     </span>
   </div>
 </div>

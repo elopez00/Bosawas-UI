@@ -13,6 +13,7 @@ Button.displayName = 'Button'
  * @param {Object} props - props pertainign to component 
  */
 export default function ButtonGroup(props) {
+    // props
     const { children, color, size, variant } = props;
 
     /**
@@ -70,12 +71,22 @@ export default function ButtonGroup(props) {
 }
 
 ButtonGroup.propTypes = {
-    // is the size of the buttons
+    /**
+     * the size of the buttons
+     */
     size: PropTypes.string,
-    // is the style of the button
+    /**
+     * the style of the button
+     */
     variant: PropTypes.string,
-    // is the color of the buttons
+    /**
+     * the color of the buttons
+     */
     color: PropTypes.string,
+    /**
+     * disables the buttons
+     */
+    disabled: PropTypes.bool,
 }
 
 ButtonGroup.defaultProps = {

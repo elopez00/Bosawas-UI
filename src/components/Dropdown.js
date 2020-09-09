@@ -1,29 +1,28 @@
 import React, { Component } from 'react'
+import { Button as CButton, Option as COption } from './'
 import styled from 'styled-components'
 import findByType from './helper/findByType'
-import colors from '../assets/colors.json'
-import { Button, Option as COption } from './'
 import PropTypes from 'prop-types'
+import colors from '../assets/colors.json'
 
 // initializes replica Option
 const Option = () => null;
-Option.displayName = 'Option'
+Option.displayName = "Option";
 
-/**
- * Select component
- * @param {Object} props - props pertaining to the object
- */
-class Select extends Component {
-    // state 
+// initializes replica Button
+const Button = () => null;
+Button.displayName = "Button";
+
+class Dropdown extends Component {
+    // state
     state = {
         menuHeight: 0,
         menuOpen: false,
-        overflow: false,
-        selected: ""
+        overflow: false
     }
-    
+
     // references
-    select = React.createRef();
+    dropdown = React.createRef();
     menu = React.createRef();
 
     /**
@@ -42,12 +41,12 @@ class Select extends Component {
     }
 
     /**
-     * handles click outside of the select menu
+     * handles click outside of the dropdown menu
      * @param {Object} event - mousedown event 
      */
     handleOutsideClick = event => {
         const { overflow } = this.state;
-        if (this.select?.current && !this.select?.current?.contains(event.target)) {
+        if (this.dropdown?.current && !this.dropdown?.current?.contains(event.target)) {
             this.setState({menuOpen: false});
             overflow && this.setState({overflow: false})
         }
@@ -55,11 +54,11 @@ class Select extends Component {
 
     /**
      * handles button click
+     * @param {Object} props - props pertaining to the Button subcomponent
      */
-    handleClick = () => {
-        const { buttonClick } = this.props;
+    handleClick = props => {
         const { menuOpen, overflow } = this.state;
-        buttonClick && buttonClick();
+        props.onClick && props.onClick();
         this.setState({menuOpen: !menuOpen});
         if (!overflow) {
             setTimeout(() => this.setState({overflow: !overflow}), 300)
@@ -73,15 +72,32 @@ class Select extends Component {
      * @param {Object} props - props pertaining to Option subcomponent 
      */
     handleOptionClick = props => {
-        const { onClick, children } = props;
+        const { onClick } = props;
         const { menuOpen } = this.state;
         onClick && onClick();
         this.setState({
-            selected: children, 
-            menuOpen: !menuOpen,
             overflow: false,
+            menuOpen: !menuOpen,
             menuHeight: this.menu.current.scrollHeight
         })
+    }
+
+    /**
+     * Renders Dropdown button
+     * @returns {Component} - DropdownButton
+     */
+    renderButton = () => {
+        const { children } = this.props;
+        const { menuOpen } = this.state;
+        const button = findByType(children, Button)[0];
+        if (!button) return;
+
+        return <CButton {...button.props} onClick={() => this.handleClick(button.props)}>
+            {button.props.children}
+            <Carat open={menuOpen}>
+                <i class="material-icons">keyboard_arrow_down</i>
+            </Carat>
+        </CButton>
     }
 
     /**
@@ -102,76 +118,48 @@ class Select extends Component {
             </COption>
         ));
     }
-    
-    render() {
-        const { placeholder, color, variant, size } = this.props;
-        const { menuHeight, menuOpen, overflow, selected } = this.state;
 
+    render() {
+        const { menuHeight, menuOpen, overflow } = this.state;
         return (
-            <CSelect 
+            <CDropdown
              height={menuHeight} 
              open={menuOpen} 
-             ref={this.select}  
+             ref={this.dropdown}  
              {...this.props}>
-                <Button color={color} onClick={this.handleClick} variant={variant} size={size}>
-                    {!selected.length ? placeholder || "Select..." : selected}
-                    <i className="material-icons">keyboard_arrow_down</i>
-                </Button>
+                { this.renderButton() }
                 <Options 
                  height={menuHeight} 
                  open={menuOpen} 
                  ref={this.menu} 
-                 menuOverflow={overflow}
-                 id="bosawas-ui-menu-options">
+                 menuOverflow={overflow}>
                     { this.renderOptions() }
                 </Options>
-            </CSelect>
+            </CDropdown>
         )
     }
 }
 
-Select.propTypes = {
-    // width of select button
-    width: PropTypes.string,
-    // height of select button
-    size: PropTypes.string,
-    // sets the button click property
-    buttonClick: PropTypes.func
-}
+export default Dropdown;
 
-Select.defaultProps = {
-    size: "default",
-    color: "default",
-    width: "default",
-    variant: "default"
-}
-
-export default Select;
-
-// styled component
-const CSelect = styled.div`
-    position: relative;
+// styled components
+const CDropdown = styled.div`
     display: inline-block;
-    & button {
+    position: relative;
+    & > button {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        text-align: left;
-        width: ${props => {
-            switch (props.width) {
-                case ("large") : return "200px";
-                case ("small") : return "100px";
-                default : return "150px"
-            }
-        }};
     }
-    & button > i {
+`
+const Carat = styled.a`
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    transform: translate(6px);
+    & i {
         transition: transform 300ms;
-        margin-left: 5px;
         transform: ${props => props.open ? 'rotate(180deg)' : 0};
-    }
-    & button:focus + div {
-        height: ${props => props.open ? props.height : 0}px;
     }
 `
 const Options = styled.div`

@@ -43,18 +43,34 @@ export default function Button(props) {
 }
 
 Button.propTypes = {
-    // needs to have some kind of content
+    /**
+     * needs to have some kind of content
+     */
     children: PropTypes.any.isRequired,
-    // is the style of the button
+    /**
+     * overall style of the button  
+     */ 
     variant: PropTypes.string,
-    // is the color of the button
+    /**
+     * overall color of the button  
+     */ 
     color: PropTypes.string,
-    // size of button
+    /**
+     * size of the button
+     */
     size: PropTypes.string,
-    // gives button the ability to redirect to link
+    /**
+     * link that the button will redirect to
+     */
     href: PropTypes.string,
-    // on click function
+    /**
+     * handles button click
+     */
     onClick: PropTypes.func,
+    /**
+     * disables button input
+     */
+    disabled: PropTypes.bool
 }
 
 Button.defaultProps = {
