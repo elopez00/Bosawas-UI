@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, TextInput, Radio, Checkbox, Switch, Button } from '../components'
+import { Form, TextInput, Radio, Checkbox, Switch, Select, Option, Button } from '../components'
 import { shallow, mount } from 'enzyme'
 import renderer from 'react-test-renderer'
 
@@ -48,5 +48,89 @@ describe ('<Form />', () => {
             .props()
             .type
         ).toBe('text')
+    })
+
+    it ('should render radio', () => {
+        const wrapper = mount (
+            <Form>
+                <Radio />
+            </Form>
+        )
+
+        expect(wrapper
+            .find('input')
+            .props()
+            .type
+        ).toBe('radio')
+    }) 
+
+    it ('should render checkbox', () => {
+        const wrapper = mount (
+            <Form>
+                <Checkbox />
+            </Form>
+        )
+
+        expect(wrapper
+            .find('input')
+            .props()
+            .type
+        ).toBe('checkbox')
+    })
+
+    it ('should render select', () => {
+        const wrapper = mount (
+            <Form>
+                <Select>
+                    <Option>Cool</Option>
+                </Select>
+            </Form>
+        )
+
+        expect(wrapper
+            .find(Select)
+        ).toBeTruthy();
+    })
+
+    it ('should render switch', () => {
+        const wrapper = mount (
+            <Form>
+                <Switch />
+            </Form>
+        )
+
+        expect(wrapper
+            .find(Switch)
+        ).toBeTruthy();
+    })
+
+    it ('should render From.Group', () => {
+        const wrapper = mount (
+            <Form>
+                <Form.Group>
+
+                </Form.Group>
+            </Form>
+        )
+
+        expect(wrapper
+            .find('div')
+        ).toBeTruthy();
+    })
+
+    it ('should render any element', () => {
+        const wrapper = mount (
+            <Form>
+                <h1>Hello</h1>
+                <span>How are you</span>
+            </Form>
+        )
+
+        expect(wrapper
+            .find('h1')
+        ).toBeTruthy();
+        expect(wrapper
+            .find('span')
+        ).toBeTruthy();
     })
 })
