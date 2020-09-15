@@ -95,7 +95,7 @@ class Dropdown extends Component {
         return <CButton {...button.props} onClick={() => this.handleClick(button.props)}>
             {button.props.children}
             <Carat open={menuOpen}>
-                <i class="material-icons">keyboard_arrow_down</i>
+                <i className="material-icons">keyboard_arrow_down</i>
             </Carat>
         </CButton>
     }

@@ -17,7 +17,7 @@ exports[`<Dropdown/> renders correctly 1`] = `
       open={false}
     >
       <i
-        class="material-icons"
+        className="material-icons"
       >
         keyboard_arrow_down
       </i>
