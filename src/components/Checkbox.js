@@ -35,7 +35,7 @@ const Label = styled.label`
     & > i {
         font-size: 1rem;
         position: absolute;
-        top: 1px;
+        top: 2px;
         left: 5px;
         display: none;
         cursor: pointer;

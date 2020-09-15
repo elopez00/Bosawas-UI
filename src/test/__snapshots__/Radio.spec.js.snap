@@ -2,7 +2,7 @@
 
 exports[`<Radio/> renders correctly 1`] = `
 <label
-  className="Radio__Label-pzn6oc-0 iGxKiK"
+  className="Radio__Label-pzn6oc-0 fIKTgb"
 >
   <input
     className="Radio__CRadio-pzn6oc-1 mNQvE"
@@ -11,8 +11,8 @@ exports[`<Radio/> renders correctly 1`] = `
     size="default"
     type="radio"
   />
-  <span>
+  <div>
     This is a radio
-  </span>
+  </div>
 </label>
 `;

@@ -2,7 +2,7 @@ import React from 'react'
 import { TextInput } from '../components'
 
 export default {
-    title: "Inputs/TextInput",
+    title: "Inputs/Text Input",
     component: TextInput
 }
 

@@ -2,7 +2,7 @@
 
 exports[`<Checkbox/> renders correcty 1`] = `
 <label
-  className="Checkbox__Label-raqpbq-0 iBlWzl"
+  className="Checkbox__Label-raqpbq-0 krawAu"
 >
   <input
     className="Checkbox__CCheckbox-raqpbq-1 gkWMsu"

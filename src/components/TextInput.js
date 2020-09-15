@@ -59,9 +59,11 @@ const Label = styled.label`
     flex-direction: column;
     font-size: 0.7rem;
     letter-spacing: 1.5px;
+    background: transparent;
     color: ${props => colors[props.color] ? colors[props.color].default : colors.blue.default};
 `
 const CTextInput = styled.input`
+    background: transparent;
     border: none;
     outline: none;
     border-bottom: 1px solid ${colors.default.dark};

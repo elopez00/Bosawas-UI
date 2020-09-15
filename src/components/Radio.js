@@ -13,7 +13,7 @@ export default function Radio(props) {
     return (
         <Label disabled={disabled}>
             <CRadio type="radio" {...props} />
-            <span>{label}</span>
+            <div>{label}</div>
         </Label>
     )
 }
@@ -33,10 +33,11 @@ Radio.defaultProps = {
 
 // styled components
 const Label = styled.label`
-    & > span {
-        transform: translateY(2px);
+    display: inline-flex;
+    & > div {
+        transform: translateY(2px)
     }
-    color: ${props => props.disabled ? "#6b6b6b" : "inherit"}
+    color: ${props => props.disabled ? "#6b6b6b" : "inherit"};
 `
 
 const CRadio = styled.input`

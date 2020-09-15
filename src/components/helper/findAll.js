@@ -24,7 +24,7 @@ export default function findAll(children, components) {
         const childType = child?.type?.displayName || child?.type?.name;
         const childInfo = { child, index };
 
-        if (!childType || !typeMap[childType]) return result["other"] = child;
+        if (!childType || !typeMap[childType]) return result["other"] = result["other"] ? [...result["other"], childInfo] : [childInfo];
         else return result[childType] = result[childType] ? [...result[childType], childInfo] : [childInfo];
     })
 

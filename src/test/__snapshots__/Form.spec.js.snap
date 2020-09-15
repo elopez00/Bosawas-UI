@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> should render correctly 1`] = `
+<form
+  className="Form__CForm-bstqze-0 fYSDhR"
+>
+  <div
+    className="Form__FormGroup-bstqze-1 dSxgLX"
+    title="Type here"
+  >
+    <h3>
+      Type here
+    </h3>
+    <label
+      className="TextInput__Label-sc-1cy0fo1-0 dKZtcB"
+      color="blue"
+    >
+      LABEL
+      <input
+        className="TextInput__CTextInput-sc-1cy0fo1-1 eNqmpL"
+        color="blue"
+        label="label"
+        placeholder="write in me"
+        type="text"
+      />
+    </label>
+    <div
+      className="Form__FormGroup-bstqze-1 goSkeC"
+    >
+      <label
+        className="TextInput__Label-sc-1cy0fo1-0 dKZtcB"
+        color="blue"
+      >
+        LABEL
+        <input
+          className="TextInput__CTextInput-sc-1cy0fo1-1 eNqmpL"
+          color="blue"
+          label="label"
+          placeholder="write in me"
+          type="text"
+        />
+      </label>
+      <label
+        className="TextInput__Label-sc-1cy0fo1-0 dKZtcB"
+        color="blue"
+      >
+        LABEL
+        <input
+          className="TextInput__CTextInput-sc-1cy0fo1-1 eNqmpL"
+          color="blue"
+          label="label"
+          placeholder="write in me"
+          type="text"
+        />
+      </label>
+    </div>
+  </div>
+  <div
+    className="Form__FormGroup-bstqze-1 dSxgLX"
+    name="group"
+    title="Choose one"
+  >
+    <h3>
+      Choose one
+    </h3>
+    <label
+      className="Radio__Label-pzn6oc-0 fIKTgb"
+    >
+      <input
+        className="Radio__CRadio-pzn6oc-1 mNQvE"
+        label="bitchass"
+        name="group"
+        size="default"
+        type="radio"
+      />
+      <div>
+        bitchass
+      </div>
+    </label>
+    <label
+      className="Radio__Label-pzn6oc-0 fIKTgb"
+    >
+      <input
+        className="Radio__CRadio-pzn6oc-1 mNQvE"
+        label="bitchass"
+        name="group"
+        size="default"
+        type="radio"
+      />
+      <div>
+        bitchass
+      </div>
+    </label>
+    <label
+      className="Radio__Label-pzn6oc-0 fIKTgb"
+    >
+      <input
+        className="Radio__CRadio-pzn6oc-1 mNQvE"
+        label="bitchass"
+        name="group"
+        size="default"
+        type="radio"
+      />
+      <div>
+        bitchass
+      </div>
+    </label>
+  </div>
+  <div
+    className="Form__FormGroup-bstqze-1 dSxgLX"
+    name="checkboxes"
+    title="Check all that apply"
+  >
+    <h3>
+      Check all that apply
+    </h3>
+    <label
+      className="Checkbox__Label-raqpbq-0 krawAu"
+    >
+      <input
+        className="Checkbox__CCheckbox-raqpbq-1 gkWMsu"
+        label="cool"
+        name="checkboxes"
+        type="checkbox"
+      />
+      cool
+      <i
+        className="material-icons"
+      >
+        check
+      </i>
+    </label>
+    <label
+      className="Checkbox__Label-raqpbq-0 krawAu"
+    >
+      <input
+        className="Checkbox__CCheckbox-raqpbq-1 gkWMsu"
+        label="is"
+        name="checkboxes"
+        type="checkbox"
+      />
+      is
+      <i
+        className="material-icons"
+      >
+        check
+      </i>
+    </label>
+    <label
+      className="Checkbox__Label-raqpbq-0 krawAu"
+    >
+      <input
+        className="Checkbox__CCheckbox-raqpbq-1 gkWMsu"
+        label="this"
+        name="checkboxes"
+        type="checkbox"
+      />
+      this
+      <i
+        className="material-icons"
+      >
+        check
+      </i>
+    </label>
+  </div>
+  <div
+    className="Form__FormGroup-bstqze-1 dSxgLX"
+    title="Turn on ;)"
+  >
+    <h3>
+      Turn on ;)
+    </h3>
+    <label
+      className="Switch__Label-sc-155zm2u-0 cezvMb"
+    >
+      <input
+        className="Switch__CSwitch-sc-155zm2u-1 SDUua"
+        color="default"
+        label="off/on"
+        size="default"
+        type="checkbox"
+      />
+      off/on
+    </label>
+  </div>
+  <button
+    className="Button__DefaultButton-sc-1dsg0nj-0 jfdIym"
+    color="blue"
+    size="default"
+    style={
+      Object {
+        "margin": "0 auto",
+        "minWidth": 200,
+      }
+    }
+  >
+    Submit
+  </button>
+</form>
+`;

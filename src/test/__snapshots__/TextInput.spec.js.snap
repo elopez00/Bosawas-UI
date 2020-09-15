@@ -2,12 +2,12 @@
 
 exports[`<TextInput/> renders correctly 1`] = `
 <label
-  className="TextInput__Label-sc-1cy0fo1-0 eOdbak"
+  className="TextInput__Label-sc-1cy0fo1-0 dKZtcB"
   color="blue"
 >
   
   <input
-    className="TextInput__CTextInput-sc-1cy0fo1-1 bMxwfu"
+    className="TextInput__CTextInput-sc-1cy0fo1-1 eNqmpL"
     color="blue"
     label=""
     type="text"
