@@ -16,16 +16,16 @@ const Template = args => (
             </Form.Group>
         </Form.Group>
         <Form.Group name="group" title="Choose one">
-            <Radio label="bitchass"/>
-            <Radio label="bitchass"/>
-            <Radio label="bitchass"/>
+            <Radio label="Option 1"/>
+            <Radio label="Option 2"/>
+            <Radio label="Option 3"/>
         </Form.Group>
         <Form.Group name="checkboxes" title="Check all that apply">
-            <Checkbox label="cool"/>
-            <Checkbox label="is"/>
-            <Checkbox label="this"/>
+            <Checkbox label="Selection 1"/>
+            <Checkbox label="Selection 2"/>
+            <Checkbox label="Selection 3"/>
         </Form.Group>
-        <Form.Group title="Turn on ;)">
+        <Form.Group title="Flip the switch">
             <Switch label="off/on"/>
         </Form.Group>
         <Button color="blue" style={{minWidth: 200, margin: "0 auto"}}>Submit</Button>
