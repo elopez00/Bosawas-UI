@@ -1,7 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { ThemeConsumer } from 'styled-components'
 import PropTypes from 'prop-types'
 import colors from '../assets/colors.json'
+import themeCreator from './helper/themeCreator'
 
 /**
  * Primary button component
@@ -34,7 +35,6 @@ export default function Button(props) {
             );
         }
     }
-
     return (
         <React.Fragment>
             { href ? <a href={!props.disabled ? href : null}>{switchVariants()}</a> : switchVariants() }
@@ -103,9 +103,20 @@ const adjustTextColor = props => {
     }
 }
 
+/**
+ * determines whether to go with default colors or new ones
+ */
+const determineTheme = color => {
+    if (colors[color]) return colors[color];
+    else if (color.includes('#') && color.length === 7 || color.length === 4) {
+        console.log(themeCreator(color))
+        return themeCreator(color);
+    } else return {};
+}
+
 // styled components
 const DefaultButton = styled.button`
-    background: ${props => colors[props.color] ? colors[props.color].default : colors.default.default};
+    background: ${props => props.color ? determineTheme(props.color).default : colors.default.default};
     color: ${props => colors[props.color] ? colors[props.color].color : colors.default.color};
     font-size: 1rem;
     padding: ${props => adjustPadding(props)};
@@ -116,10 +127,10 @@ const DefaultButton = styled.button`
     transition: background 300ms, box-shadow 150ms;
     box-shadow: 0 0 0 0 transparent;
     &:hover {
-        background: ${props => colors[props.color] ? colors[props.color].dark : colors.default.dark};
+        background: ${props => props.color ? determineTheme(props.color).dark : colors.default.dark};
     }
     &:active {
-        box-shadow: 0 0 0 3px ${props => colors[props.color] ? colors[props.color].glow : colors.default.glow};
+        box-shadow: 0 0 0 3px ${props => props.color ? determineTheme(props.color).glow : colors.default.glow};
     }
     &:disabled {
         color: #6b6b6b;
