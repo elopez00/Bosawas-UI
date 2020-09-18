@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { ThemeConsumer } from 'styled-components'
 import PropTypes from 'prop-types'
 import colors from '../assets/colors.json'
-import themeCreator from './helper/themeCreator'
+import determineTheme from './helper/determineTheme'
 
 /**
  * Primary button component
@@ -43,33 +43,19 @@ export default function Button(props) {
 }
 
 Button.propTypes = {
-    /**
-     * needs to have some kind of content
-     */
+    /** needs to have some kind of content */
     children: PropTypes.any.isRequired,
-    /**
-     * overall style of the button  
-     */ 
+    /** overall style of the button */ 
     variant: PropTypes.string,
-    /**
-     * overall color of the button  
-     */ 
+    /** overall color of the button */ 
     color: PropTypes.string,
-    /**
-     * size of the button
-     */
+    /** size of the button */
     size: PropTypes.string,
-    /**
-     * link that the button will redirect to
-     */
+    /** link that the button will redirect to */
     href: PropTypes.string,
-    /**
-     * handles button click
-     */
+    /** handles button click */
     onClick: PropTypes.func,
-    /**
-     * disables button input
-     */
+    /** disables button input */
     disabled: PropTypes.bool
 }
 
@@ -103,21 +89,10 @@ const adjustTextColor = props => {
     }
 }
 
-/**
- * determines whether to go with default colors or new ones
- */
-const determineTheme = color => {
-    if (colors[color]) return colors[color];
-    else if (color.includes('#') && color.length === 7 || color.length === 4) {
-        console.log(themeCreator(color))
-        return themeCreator(color);
-    } else return {};
-}
-
 // styled components
 const DefaultButton = styled.button`
-    background: ${props => props.color ? determineTheme(props.color).default : colors.default.default};
-    color: ${props => colors[props.color] ? colors[props.color].color : colors.default.color};
+    background: ${props => determineTheme(props.color).default};
+    color: ${props => determineTheme(props.color).color};
     font-size: 1rem;
     padding: ${props => adjustPadding(props)};
     border: none;
@@ -127,10 +102,10 @@ const DefaultButton = styled.button`
     transition: background 300ms, box-shadow 150ms;
     box-shadow: 0 0 0 0 transparent;
     &:hover {
-        background: ${props => props.color ? determineTheme(props.color).dark : colors.default.dark};
+        background: ${props => determineTheme(props.color).dark};
     }
     &:active {
-        box-shadow: 0 0 0 3px ${props => props.color ? determineTheme(props.color).glow : colors.default.glow};
+        box-shadow: 0 0 0 3px ${props => determineTheme(props.color).glow};
     }
     &:disabled {
         color: #6b6b6b;
@@ -144,18 +119,18 @@ const OutlineButton = styled.button`
     font-size: 1rem;
     border-radius: 5px;
     padding: ${props => adjustPadding(props)};
-    border: 1px solid ${props => colors[props.color] ? colors[props.color].default : colors.default.default};
+    border: 1px solid ${props => determineTheme(props.color).default};
     outline: none;
     transition: background 300ms, color 300ms, border 300ms;
     cursor: pointer;
     &:hover {
-        border: 1px solid ${props => colors[props.color] ? colors[props.color].default : colors.default.default};
-        background: ${props => colors[props.color] ? colors[props.color].glow : colors.default.glow};
+        border: 1px solid ${props => determineTheme(props.color).default};
+        background: ${props => determineTheme(props.color).glow};
         color: ${props => adjustTextColor(props)};
     }
     &:active {
-        border: 1px solid ${props => colors[props.color] ? colors[props.color].default : colors.default.default};
-        background: ${props => colors[props.color] ? colors[props.color].intenseGlow : colors.default.intenseGlow};
+        border: 1px solid ${props => determineTheme(props.color).default};
+        background: ${props => determineTheme(props.color).intenseGlow};
         color: ${props => {
             if (colors[props.color]) {
                 return props.color === 'default' ? colors.default.color : colors[props.color].dark;
@@ -186,11 +161,11 @@ const BubbleButton = styled.button`
     cursor: pointer;
     transition: background 300ms, color 300ms;
     &:hover {
-        background: ${props => colors[props.color] ? colors[props.color].glow : colors.default.glow}; 
+        background: ${props => determineTheme(props.color).glow}; 
         color: ${props => adjustTextColor(props)};
     }
     &:active {
-        background: ${props => colors[props.color] ? colors[props.color].intenseGlow : colors.default.intenseGlow};
+        background: ${props => determineTheme(props.color).intenseGlow};
         color: ${props => adjustTextColor(props)};
     }
     &:disabled {

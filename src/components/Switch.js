@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import colors from '../assets/colors.json'
 import PropTypes from 'prop-types'
+import determineTheme from './helper/determineTheme'
 
 /**
  * UI Switch Component
@@ -68,39 +69,39 @@ const CSwitch = styled.input`
     }
     &:active {
         &::after {
-            background: ${colors.blue.dark}
+            background: ${props => determineTheme(props.color).dark}
         }
     }
     &:checked:active {
         &::after {
-            background: ${colors.blue.dark};
+            background: ${props => determineTheme(props.color).dark};
         }
     }
     &:checked {
         &::after {
             margin-left: 13px;
-            background: ${colors.blue.default}
+            background: ${props => props.color !== 'default' ? determineTheme(props.color).default : colors.default.dark}
         }
     }
     &:checked:focus {
         &::after {
-            box-shadow: 0 0 0 5px ${colors.blue.glow};
+            box-shadow: 0 0 0 5px ${props => determineTheme(props.color).glow};
         }
     }
     &:focus {
         &::after {
-            box-shadow: 0 0 0 5px ${colors.default.intenseGlow}
+            box-shadow: 0 0 0 5px ${props => determineTheme(props.color).intenseGlow}
         }
     }
     &:checked:hover {
         &::after {
-            box-shadow: 0 0 0 5px ${colors.blue.glow};
+            box-shadow: 0 0 0 5px ${props => determineTheme(props.color).glow};
         
         }
     }
     &:hover {
         &::after {
-            box-shadow: 0 0 0 5px ${colors.default.intenseGlow}
+            box-shadow: 0 0 0 5px ${props => determineTheme(props.color).intenseGlow}
         }
     }
 `

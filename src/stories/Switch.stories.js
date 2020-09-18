@@ -15,3 +15,4 @@ const Template = args => (
 )
 
 export const SwitchComponent = Template.bind({})
+

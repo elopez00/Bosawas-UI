@@ -36,7 +36,8 @@ export const Default = Template.bind({});
 Default.args = {
     disabled: false,
     children: 'Dropdown',
-    size: 'default'
+    size: 'default',
+    color: 'default'
 }
 
 export const Outline = Template.bind({});
@@ -44,7 +45,8 @@ Outline.args = {
     disabled: false,
     children: 'Dropdown',
     variant: 'outline',
-    size: 'default'
+    size: 'default',
+    color: 'default',
 }
 
 export const Bubble = Template.bind({});
@@ -52,5 +54,6 @@ Bubble.args = {
     disabled: false,
     children: 'Dropdown',
     variant: 'bubble',
-    size: 'default'
+    size: 'default',
+    color: 'default'
 }
