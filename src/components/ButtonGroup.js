@@ -3,6 +3,7 @@ import styled, {css} from 'styled-components'
 import colors from '../assets/colors.json'
 import PropTypes from 'prop-types'
 import findByType from './helper/findByType'
+import determineTheme from './helper/determineTheme'
 
 // initializes replica button
 const Button = () => null;
@@ -71,21 +72,13 @@ export default function ButtonGroup(props) {
 }
 
 ButtonGroup.propTypes = {
-    /**
-     * the size of the buttons
-     */
+    /** the size of the buttons */
     size: PropTypes.string,
-    /**
-     * the style of the button
-     */
+    /** the style of the button */
     variant: PropTypes.string,
-    /**
-     * the color of the buttons
-     */
+    /** the color of the buttons */
     color: PropTypes.string,
-    /**
-     * disables the buttons
-     */
+    /** disables the buttons */
     disabled: PropTypes.bool,
 }
 
@@ -141,7 +134,7 @@ const adjustTextColor = props => {
  * @returns {String} = style for border
  */
 const editDefaultBorder = props => {
-    let borderColor = colors[props.color] ? colors[props.color].dark : colors.default.dark;
+    let borderColor = determineTheme(props.color).dark;
     if (props.edgeType === 'left' || props.edgeType === 'middle') return `1px solid ${borderColor}`;
     else return 'none';
 }
@@ -184,8 +177,8 @@ const CButtonGroup = styled.div`
 const DefaultButton = styled.button`
     padding: ${props => adjustPadding(props)};
     font-size: 1rem;
-    background: ${props => colors[props.color] ? colors[props.color].default : colors.default.default};
-    color: ${props => colors[props.color] ? colors[props.color].color : colors.default.color};
+    background: ${props => determineTheme(props.color).default};
+    color: ${props => determineTheme(props.color).color};
     border: none;
     border-right: ${props => editDefaultBorder(props)};
     border-radius: ${props => adjustBorderRadius(props)};
@@ -193,7 +186,7 @@ const DefaultButton = styled.button`
     cursor: pointer;
     outline: none;
     &:hover {
-        background: ${props => colors[props.color] ? colors[props.color].dark : colors.default.dark};
+        background: ${props => determineTheme(props.color).dark};
     }
 `
 const OutlineButton = styled.button`
@@ -202,12 +195,12 @@ const OutlineButton = styled.button`
     background: transparent;
     color: ${props => adjustTextColor(props)};
     ${props => adjustOultineBorder(props)};
-    border-color: ${props => colors[props.color] ? colors[props.color].default : colors.default.default};
+    border-color: ${props => determineTheme(props.color).default};
     cursor: pointer;
     transition: background 300ms;
     outline: none;
     &:hover {
-        background: ${props => colors[props.color] ? colors[props.color].glow : colors.default.glow}
+        background: ${props => determineTheme(props.color).glow}
     }
 `
 const BubbleButton = styled.button`
@@ -221,7 +214,7 @@ const BubbleButton = styled.button`
     cursor: pointer;
     transition: background 300ms, color 300ms;
     &:hover {
-        background: ${props => colors[props.color] ? colors[props.color].glow : colors.default.glow};
+        background: ${props => determineTheme(props.color).glow};
         color: ${props => adjustTextColor(props)};
     }
 

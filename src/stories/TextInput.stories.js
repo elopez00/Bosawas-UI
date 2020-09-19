@@ -16,7 +16,7 @@ const Template = args => (
 export const TextInputComponent = Template.bind({})
 TextInputComponent.args = {
     placeholder: "placeholder",
-    color: "",
+    color: "default",
     disabled: false,
     label: "label"
 }

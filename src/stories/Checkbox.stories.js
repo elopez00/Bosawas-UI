@@ -8,8 +8,8 @@ export default {
 
 const Template = args => (
     <React.Fragment>
-        <Checkbox color="red" {...args} label="this is a label for the checkbox"/><br/>
-        <Checkbox color="blue" {...args} label="this is another label for the checkbox"/>
+        <Checkbox {...args} label="this is a label for the checkbox" color="red"/><br/>
+        <Checkbox {...args} label="this is another label for the checkbox" color="blue"/>
     </React.Fragment>
 )
 

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import colors from '../assets/colors.json'
 import PropTypes from 'prop-types'
+import determineTheme from './helper/determineTheme'
 
 /**
  * Text Input component
@@ -50,7 +51,7 @@ TextInput.propTypes = {
 }
 
 TextInput.defaultProps = {
-    color: "blue",
+    color: "default",
     label: ""
 }
 
@@ -60,7 +61,7 @@ const Label = styled.label`
     font-size: 0.7rem;
     letter-spacing: 1.5px;
     background: transparent;
-    color: ${props => colors[props.color] ? colors[props.color].default : colors.blue.default};
+    color: ${props => props.color !== 'default' ? determineTheme(props.color).default : colors.default.dark};
 `
 const CTextInput = styled.input`
     background: transparent;
@@ -73,7 +74,7 @@ const CTextInput = styled.input`
     padding: 5px 1px;
     transition: border 300ms, background 300ms;
     &:focus {
-        border-bottom: 1px solid ${props => colors[props.color] ? colors[props.color].default : colors.blue.default}
+        border-bottom: 1px solid ${props => props.color !== 'default' ? determineTheme(props.color).default : colors.default.dark};
     }
     &:disabled {
         border-bottom: 1px solid #d9d9d9;

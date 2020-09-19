@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import colors from '../assets/colors.json'
 import PropTypes from 'prop-types'
+import determineTheme from './helper/determineTheme'
 
 /**
  * Component for the Radio input
@@ -28,7 +29,8 @@ Radio.propTypes = {
 
 Radio.defaultProps = {
     background: "default",
-    size: "default"
+    size: "default",
+    color: 'default'
 }
 
 // styled components
@@ -52,13 +54,13 @@ const CRadio = styled.input`
     cursor: pointer;
     &:hover {
         transition: background 300ms;
-        background: ${props => colors[props.color] ? colors[props.color].glow : colors.blue.glow }
+        background: ${props => determineTheme(props.color).glow}
     }
     &:active {
-        background: ${props => colors[props.color] ? colors[props.color].intenseGlow : colors.blue.intenseGlow}
+        background: ${props => determineTheme(props.color).intenseGlow}
     }
     &:checked {
-        background: ${props => colors[props.color] ? colors[props.color].default : colors.blue.default}
+        background: ${props => props.color !== 'default' ? determineTheme(props.color).default : colors.default.dark}
     }
     &:checked:after {
         content: '';

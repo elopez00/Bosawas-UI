@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import colors from '../assets/colors.json'
+import determineTheme from './helper/determineTheme'
 
 /**
  * This component displays the checkbox
@@ -20,10 +21,12 @@ export default function Checkbox(props) {
 }
 
 Checkbox.propsTypes = {
-    /**
-     * Disabled checkbox
-     */
+    /** Disabled checkbox */
     disabled: PropTypes.bool
+}
+
+Checkbox.defaultProps = {
+    color: 'default'
 }
 
 // styled components
@@ -39,7 +42,7 @@ const Label = styled.label`
         left: 5px;
         display: none;
         cursor: pointer;
-        color: ${props => colors[props.color] ? colors[props.color].color : colors.blue.color};
+        color: ${props => determineTheme(props.color).color};
     }
     & input:checked ~ i {
         display: block;
@@ -60,17 +63,17 @@ const CCheckbox = styled.input`
     transition: background 100ms, border 300ms, color 100ms;
     &:hover {
         transition: background 200ms;
-        background: ${props => colors[props.color] ? colors[props.color].glow : colors.blue.glow}
+        background: ${props => determineTheme(props.color).glow}
     }
     &:active {
-        background: ${props => colors[props.color] ? colors[props.color].intenseGlow : colors.blue.intenseGlow}
+        background: ${props => determineTheme(props.color).intenseGlow}
     }
     &:checked:active {
-        background: ${props => colors[props.color] ? colors[props.color].intenseGlow : colors.blue.intenseGlow};
+        background: ${props => determineTheme(props.color).intenseGlow};
     }
     &:checked {
-        background: ${props => colors[props.color] ? colors[props.color].default : colors.blue.default};
-        color: ${props => colors[props.color] ? colors[props.color].color : colors.blue.color};
+        background: ${props => determineTheme(props.color).default};
+        color: ${props => determineTheme(props.color).color};
     }
     &:disabled {
         color: #6b6b6b;
