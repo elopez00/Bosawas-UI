@@ -6,7 +6,8 @@ import {
     Switch as CSwitch,
     Radio as CRadio,
     Checkbox as CCheckbox,
-    Select as CSelect
+    Select as CSelect,
+    Button as CButton
 } from './'
 import PropTypes from 'prop-types';
 
@@ -18,7 +19,7 @@ export default function Form(props) {
     const renderTextInputs = textInputs => textInputs?.map(textInput => {
         const { child, index } = textInput;
         return { 
-            child: <CTextInput {...child.props} key={Math.random()}>{child.props.children}</CTextInput>,
+            child: <CTextInput {...child.props}  color={props.color} key={Math.random()}>{child.props.children}</CTextInput>,
             index 
         }
     })
@@ -30,7 +31,7 @@ export default function Form(props) {
     const renderSwitches = switches => switches?.map(cswitch => {
         const { child, index } = cswitch;
         return { 
-            child: <CSwitch {...child.props} key={Math.random()}/>,
+            child: <CSwitch {...child.props} key={Math.random()} color={props.color} />,
             index
         }
     })
@@ -42,7 +43,7 @@ export default function Form(props) {
     const renderRadios = (radios, group) => radios?.map(radio => {
         const { child, index } = radio;
         return { 
-            child: <CRadio {...child.props} name={group || child.props.name} key={Math.random()} />,
+            child: <CRadio {...child.props} color={props.color} name={group || child.props.name} key={Math.random()} />,
             index
         }
     })
@@ -54,7 +55,7 @@ export default function Form(props) {
     const renderCheckboxes = (checkboxes, group) => checkboxes?.map(checkbox => {
         const { child, index } = checkbox;
         return {
-            child: <CCheckbox {...child.props} name={group || child.props.name} key={Math.random()} />,
+            child: <CCheckbox {...child.props} color={props.color} name={group || child.props.name} key={Math.random()} />,
             index
         }
     })
@@ -66,7 +67,19 @@ export default function Form(props) {
     const renderSelects = selects => selects?.map(select => {
         const { child, index } = select;
         return {
-            child: <CSelect {...child.props} key={Math.random()} />, 
+            child: <CSelect {...child.props} color={props.color} key={Math.random()} />, 
+            index
+        }
+    })
+
+    /**
+     * renders all buttons
+     * @param {Object} buttons - object containing all button components and indexes
+     */
+    const renderButtons = buttons => buttons?.map(button => {
+        const { child, index } = button;
+        return {
+            child: <CButton {...child.props} key={Math.random()} color={props.color}>{child.props.children}</CButton>,
             index
         }
     })
@@ -78,7 +91,7 @@ export default function Form(props) {
     const renderGroups = groups => groups?.map(group => {
         const { child, index } = group;
         return {
-            child: <FormGroup {...child.props} key={Math.random()}>
+            child: <FormGroup {...child.props} color={props.color} key={Math.random()}>
                 { child.props.title ? <h3>{child.props.title}</h3> : null}
                 { renderContent(child.props) }
             </FormGroup>,
@@ -92,7 +105,7 @@ export default function Form(props) {
      */
     const renderContent = cprops => {
         // components
-        const components = findAll(cprops.children, [TextInput, Switch, Radio, Checkbox, Select, Group]);
+        const components = findAll(cprops.children, [TextInput, Switch, Radio, Checkbox, Select, Group, Button]);
 
         // individual components
         const TextInputs = renderTextInputs(components['TextInput']) || [];
@@ -101,11 +114,12 @@ export default function Form(props) {
         const Checkboxes = renderCheckboxes(components['Checkbox'], cprops.name) || [];
         const Selects = renderSelects(components['Select']) || [];
         const Groups = renderGroups(components['Form.Group']) || [];
+        const Buttons = renderButtons(components['Button']) || [];
         const Others = components['other'] || [];
-        const renderAll = [...TextInputs, ...Switches, ...Radios, ...Checkboxes, ...Selects, ...Groups, ...Others]
+        const renderAll = [...TextInputs, ...Switches, ...Radios, ...Checkboxes, ...Selects, ...Groups, ...Buttons, ...Others]
             .sort((a, b) => a.index - b.index);
 
-        return renderAll.map(component => component.child)
+        return renderAll.map(component => component.child);
     }
 
     return (
@@ -123,14 +137,16 @@ const Radio = () => null;
 const Checkbox = () => null;
 const Select = () => null;
 const Group = () => null;
+const Button = () => null;
 
 // set respective display names
 TextInput.displayName = 'TextInput';
 Switch.displayName = 'Switch';
 Radio.displayName = 'Radio';
 Checkbox.displayName = 'Checkbox';
-Select.displayName = 'Select'
-Group.displayName = 'Form.Group'
+Select.displayName = 'Select';
+Button.displayName = 'Button';
+Group.displayName = 'Form.Group';
 
 // assign group as subcomponent
 Form.Group = Group;
@@ -143,6 +159,8 @@ Form.propTypes = {
     width: PropTypes.string,
     /** onSubmit */
     onSubmit: PropTypes.func,
+    /** color theme of the form */
+    color: PropTypes.string
     
 }
 

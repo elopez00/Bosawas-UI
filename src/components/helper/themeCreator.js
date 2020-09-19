@@ -4,12 +4,22 @@
  * @param {Number} percent - how dark you want to make the color
  */
 const colorShift = (color, percent) => {
-    let num = parseInt(color.replace("#",""),16),
-    amt = Math.round(2.55 * percent),
-    R = (num >> 16) + amt,
-    B = (num >> 8 & 0x00FF) + amt,
-    G = (num & 0x0000FF) + amt;
-    return "#" + (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (B<255?B<1?0:B:255)*0x100 + (G<255?G<1?0:G:255)).toString(16).slice(1);
+    // convert hex to int
+    let num = parseInt(color.replace("#",""), 16);
+
+    // convert to rgb
+    let amt = Math.round(2.55 * percent);
+    let r = (num >> 16) + amt;
+    let b = (num >> 8 & 0x00FF) + amt;
+    let g = (num & 0x0000FF) + amt;
+    
+    return "#" + ( 
+        0x1000000 
+         + (r < 255 ? r < 1 ? 0 : r : 255) * 0x10000
+         + (b < 255 ? b < 1 ? 0 : b : 255) * 0x100
+         + (g < 255 ? g < 1 ? 0 : g : 255) 
+    ).toString(16)
+    .slice(1);
 }
 
 /**
@@ -20,12 +30,12 @@ const getTextColor = color => {
     let hexcolor = color.slice(1);
 
     // convert to rgb
-    var r = parseInt(hexcolor.substr(0,2),16);
-	var g = parseInt(hexcolor.substr(2,2),16);
-    var b = parseInt(hexcolor.substr(4,2),16);
+    let r = parseInt(hexcolor.substr(0,2),16);
+	let g = parseInt(hexcolor.substr(2,2),16);
+    let b = parseInt(hexcolor.substr(4,2),16);
     
     // Get YIQ ratio
-	var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+	let yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
 
 	// Check contrast
 	return (yiq >= 158) ? 'black' : 'white';

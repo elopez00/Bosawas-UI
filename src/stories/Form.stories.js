@@ -3,7 +3,7 @@ import { Form, TextInput, Radio, Button, Checkbox, Switch } from '../components'
 
 export default {
     component: Form,
-    title: "Inputs/Form"
+    title: "Layout/Form"
 }
 
 const Template = args => (
@@ -41,5 +41,5 @@ FormComponent.args = {
         e.preventDefault();
         console.log('this happened')
     },
-
+    color: "default",
 }

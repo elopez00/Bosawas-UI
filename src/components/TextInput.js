@@ -21,7 +21,7 @@ export default function TextInput(props) {
         .forEach(prop => newProps[prop] = props[prop]);
     
     return (
-        <Label style={style} color={color}>{label.toUpperCase()}
+        <Label style={style} color={color}>{label}
             <CTextInput type="text" {...newProps} style={inputStyle}/>
         </Label>
     )
@@ -58,8 +58,8 @@ TextInput.defaultProps = {
 const Label = styled.label`
     display: inline-flex;
     flex-direction: column;
-    font-size: 0.7rem;
-    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    letter-spacing: 0;
     background: transparent;
     color: ${props => props.color !== 'default' ? determineTheme(props.color).default : colors.default.dark};
 `
