@@ -10,7 +10,7 @@ import determineTheme from './helper/determineTheme'
  */
 export default function TextInput(props) {
     // props 
-    const { label, style, inputStyle, color } = props;
+    const { label, style, inputStyle, color, textarea } = props;
 
     // new props
     let newProps = {};
@@ -22,32 +22,26 @@ export default function TextInput(props) {
     
     return (
         <Label style={style} color={color}>{label}
-            <CTextInput type="text" {...newProps} style={inputStyle}/>
+            { textarea ? <TextArea /> 
+              : <CTextInput type="text" {...newProps} style={inputStyle}/>
+            }
         </Label>
     )
 }
 
 TextInput.propTypes = {
-    /**
-     * placeholder of text input
-     */
+    /** placeholder of text input */
     placeholder: PropTypes.string,
-    /**
-     * overall color theme of component
-     */
+    /** overall color theme of component */
     color: PropTypes.string,
-    /**
-     * disables component input
-     */
+    /** disables component input */
     disabled: PropTypes.bool,
-    /**
-     * Label of text input
-     */
+    /** Label of text input */
     label: PropTypes.string,
-    /**
-     * Style of input
-     */
-    inputStyle: PropTypes.object
+    /** Style of input */
+    inputStyle: PropTypes.object,
+    /** Converts to textarea when true */
+    textarea: PropTypes.bool
 }
 
 TextInput.defaultProps = {
@@ -80,4 +74,7 @@ const CTextInput = styled.input`
         border-bottom: 1px solid #d9d9d9;
         background: rgb(5,5,5, 0.05)
     }
+`
+const TextArea = styled.textarea`
+    
 `
