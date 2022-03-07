@@ -81,5 +81,13 @@
 		"highlight.js": "^11.4.0",
 		"node-notifier": "^10.0.0"
 	},
-  "dependencies": {}
+  "dependencies": {},
+  "jest": {
+		"setupFilesAfterEnv": [
+			"@testing-library/jest-dom/extend-expect"
+		],
+		"moduleNameMapper": {
+			"\\.(css|less|scss|sass)$": "identity-obj-proxy"
+		}
+	}
 }

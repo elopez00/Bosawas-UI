@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.text {
+    font-family: 'Cabin', sans-serif;
+    font-size: 1rem;
+}
+
+.text.h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.text.h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.text.h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.text > .text {
+    font-size: inherit;
+    display: inline-block;
+}
+
+.text.excludeMargins {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.text.underline {
+    text-decoration: underline;
+}
+
+.text.bold {
+    font-weight: bold;
+}
+
+.text.italics {
+    font-style: italic;
+}
+
+.text.newLine {
+    display: block;
+}
