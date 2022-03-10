@@ -57,10 +57,16 @@
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/addons": "^6.4.19",
     "@storybook/react": "^6.4.19",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
+    "@types/jest-axe": "^3.5.3",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.13",
     "babel-loader": "^8.2.3",
     "husky": "^7.0.4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-axe": "^6.0.0",
+    "node-fetch": "^2.6.7",
     "postcss": "^8.4.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -72,22 +78,22 @@
     "typescript": "^4.6.2"
   },
   "resolutions": {
-		"node-fetch": "^2.6.7",
-		"ansi-regex": "^5.0.1",
-		"prismjs": "^1.26.0",
-		"glob-parent": "^6.0.2",
-		"trim": "^1.0.1",
-		"marked": "^4.0.12",
-		"highlight.js": "^11.4.0",
-		"node-notifier": "^10.0.0"
-	},
+    "node-fetch": "^2.6.7",
+    "ansi-regex": "^5.0.1",
+    "prismjs": "^1.26.0",
+    "glob-parent": "^6.0.2",
+    "trim": "^1.0.1",
+    "marked": "^4.0.12",
+    "highlight.js": "^11.4.0",
+    "node-notifier": "^10.0.0"
+  },
   "dependencies": {},
   "jest": {
-		"setupFilesAfterEnv": [
-			"@testing-library/jest-dom/extend-expect"
-		],
-		"moduleNameMapper": {
-			"\\.(css|less|scss|sass)$": "identity-obj-proxy"
-		}
-	}
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
+  }
 }
