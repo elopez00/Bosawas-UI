@@ -1,99 +1,99 @@
 {
-	"version": "0.1.0",
-	"license": "MIT",
-	"main": "dist/index.js",
-	"typings": "dist/index.d.ts",
-	"files": [
-		"dist",
-		"src"
-	],
-	"engines": {
-		"node": ">=10"
-	},
-	"scripts": {
-		"start": "tsdx watch",
-		"build": "tsdx build",
-		"test": "tsdx test --passWithNoTests",
-		"lint": "tsdx lint",
-		"prepare": "tsdx build",
-		"size": "size-limit",
-		"analyze": "size-limit --why",
-		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook"
-	},
-	"peerDependencies": {
-		"react": ">=16"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "tsdx lint"
-		}
-	},
-	"prettier": {
-		"printWidth": 80,
-		"semi": true,
-		"singleQuote": true,
-		"trailingComma": "es5"
-	},
-	"name": "bosawas-ui",
-	"author": "Eddie Lopez",
-	"module": "dist/bosawas-ui.esm.js",
-	"size-limit": [
-		{
-			"path": "dist/bosawas-ui.cjs.production.min.js",
-			"limit": "10 KB"
-		},
-		{
-			"path": "dist/bosawas-ui.esm.js",
-			"limit": "10 KB"
-		}
-	],
-	"devDependencies": {
-		"@babel/core": "^7.17.5",
-		"@size-limit/preset-small-lib": "^7.0.8",
-		"@storybook/addon-essentials": "^6.4.19",
-		"@storybook/addon-info": "^5.3.21",
-		"@storybook/addon-links": "^6.4.19",
-		"@storybook/addons": "^6.4.19",
-		"@storybook/react": "^6.4.19",
-		"@testing-library/jest-dom": "^5.14.1",
-		"@testing-library/react": "^12.1.2",
-		"@testing-library/user-event": "^13.5.0",
-		"@types/jest-axe": "^3.5.3",
-		"@types/react": "^17.0.39",
-		"@types/react-dom": "^17.0.13",
-		"babel-loader": "^8.2.3",
-		"husky": "^7.0.4",
-		"identity-obj-proxy": "^3.0.0",
-		"jest-axe": "^5.0.1",
-		"postcss": "^8.3.9",
-		"react": "^17.0.2",
-		"react-dom": "^17.0.2",
-		"react-is": "^17.0.2",
-		"rollup-plugin-postcss": "^4.0.2",
-		"size-limit": "^7.0.8",
-		"tsdx": "^0.14.1",
-		"tslib": "^2.3.1",
-		"typescript": "^4.6.2"
-	},
-	"resolutions": {
-		"node-fetch": "^2.6.7",
-		"ansi-regex": "^5.0.1",
-		"prismjs": "^1.26.0",
-		"glob-parent": "^6.0.2",
-		"postcss": "^8.3.9",
-		"trim": "^1.0.1",
-		"marked": "^4.0.12",
-		"highlight.js": "^11.4.0",
-		"node-notifier": "^10.0.0",
-		"@storybook/addon-postcss": "^2.0.0"
-	},
-	"jest": {
-		"setupFilesAfterEnv": [
-			"@testing-library/jest-dom/extend-expect"
-		],
-		"moduleNameMapper": {
-			"\\.(css|less|scss|sass)$": "identity-obj-proxy"
-		}
-	}
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "bosawas-ui-3",
+  "author": "Eddie Lopez",
+  "module": "dist/bosawas-ui-3.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/bosawas-ui-3.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/bosawas-ui-3.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@size-limit/preset-small-lib": "^7.0.8",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-info": "^5.3.21",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/addons": "^6.4.19",
+    "@storybook/react": "^6.4.19",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
+    "@types/jest-axe": "^3.5.3",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.13",
+    "babel-loader": "^8.2.3",
+    "husky": "^7.0.4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest-axe": "^6.0.0",
+    "node-fetch": "^2.6.7",
+    "postcss": "^8.4.8",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-is": "^17.0.2",
+    "rollup-plugin-postcss": "^4.0.2",
+    "size-limit": "^7.0.8",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.2"
+  },
+  "resolutions": {
+    "node-fetch": "^2.6.7",
+    "ansi-regex": "^5.0.1",
+    "prismjs": "^1.26.0",
+    "glob-parent": "^6.0.2",
+    "trim": "^1.0.1",
+    "marked": "^4.0.12",
+    "highlight.js": "^11.4.0",
+    "node-notifier": "^10.0.0"
+  },
+  "dependencies": {},
+  "jest": {
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
+  }
 }
