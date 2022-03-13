@@ -1,0 +1,46 @@
+.button {
+    cursor: pointer;
+    margin: 0;
+}
+
+.button.area {
+    background: none;
+    border: none;
+}
+
+.button.area > .inset {
+    display: none;
+}
+
+.button.default {
+    background: #FB5353;
+    color: white;
+    padding: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    border-radius: 0 5px 0 5px;
+    transition: filter 300ms;
+    user-select: none;
+}
+
+.button.default:hover {
+    filter: brightness(90%);
+}
+
+.button.default > .inset {
+    background: white;
+}
+
+.button.default:active > .inset{
+    transform: translate(3px);
+}
+
+.inset {
+    display: inline-block;
+    height: 18px;
+    width: 3px;
+    background: black;
+    margin-right: 5px;
+    transition: transform 300ms;
+}
